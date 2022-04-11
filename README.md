@@ -6,9 +6,10 @@
 <h4> &emsp;&ensp;•&emsp; Vladislav Shabalin 🎙 Developer/Tester </h4>
 <h4> &emsp;&ensp;•&emsp; Kirill Maximenko 💭 Developer/Tester</h4>
 <h4> &emsp;&ensp;&emsp;</h4>
-  
+
+<!--
 <h2>
     Description
 </h2>   
-  
+-->  
 </body>
