@@ -1,5 +1,5 @@
 <body>
-<p align="center"><img src="https://github.com/angversh/Medea/blob/main/Images/Medea.gif?raw=true" width="500" height="280" alt=""/></p>
+<p align="center"><img src="https://github.com/angversh/Medea/blob/main/Images/MedeaGif.gif?raw=true" width="495" height="260" alt=""/></p>
 <h1 align="center">Created by:</h1> 
   
 <h4> &emsp;&ensp;•&emsp; Angelina Vershinina 💚 Leader/Developer </h4>
