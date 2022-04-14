@@ -7,7 +7,13 @@
 <li>Vladislav Shabalin 🎙 Developer/Tester</li>
 <li>Kirill Maximenko 💭 Developer/Tester</li>
 
+<h1 align="center">Features:</h1> 
+
 <!--
+- [none](#github-card)
+- [2](#github-pins)
+  - [3](#common)
+
 <h2>
     Description
 </h2>   
