@@ -5,7 +5,7 @@
    
 <li>Angelina Vershinina 💚 Leader/Developer</li>
 <li>Vladislav Shabalin 🎙 Developer/Tester</li>
-<li>Kirill Maximenko 💭 Developer/Teste</li>
+<li>Kirill Maximenko 💭 Developer/Tester</li>
 
 <!--
 <h2>
