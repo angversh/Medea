@@ -10,7 +10,7 @@
 
 | `MedeaHome`  | `MedeaLibrary` |
 | :--: | :--: |
-|<img src="https://github.com/angversh/Medea/blob/main/Images/MedeaHome.png?raw=true" width="496" height="270"/> | <img src="https://github.com/angversh/Medea/blob/main/Images/MedeaLibrary.png?raw=true" width="496" height="270"/> |   
+|<img src="https://github.com/angversh/Medea/blob/main/Images/MedeaHome.png?raw=true" width="480" height="270"/> | <img src="https://github.com/angversh/Medea/blob/main/Images/MedeaLibrary.png?raw=true" width="480" height="270"/> |   
  
 <!--   
 <h1 align="center">Features:</h1> 
