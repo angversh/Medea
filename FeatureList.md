@@ -1,6 +1,6 @@
-<h1 align='center'>The player must be able/have:</h1>
+<h1 align='center'>The Player must be able/have:</h1>
 
-<p align="center"><img src="https://media4.giphy.com/media/3o6MbbT5ctRJeOnPIA/giphy.gif?cid=ecf05e47d5vu65twsl9nibtl4wwmg8ysvkboodz2g1uqm44n&rid=giphy.gif&ct=g" width="320" height="250"/></p>
+<p align="center"><img src="https://media4.giphy.com/media/3o6MbbT5ctRJeOnPIA/giphy.gif?cid=ecf05e47d5vu65twsl9nibtl4wwmg8ysvkboodz2g1uqm44n&rid=giphy.gif&ct=g" width="330" height="250"/></p>
 
 <h1></h1>
 <ol type="1"><b>
