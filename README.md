@@ -17,7 +17,7 @@
     section 1. MP3 Playback
       Assignees: 7: Vlad, Kirill 
     section 2. Playing MP3 in Medea Player
-      Assignees: 6: Vlad, Angelina, Kirill 
+      Assignees: 7: Vlad, Angelina, Kirill 
     section 3. Player Control with Buttons
       Assignees: 4: Vlad, Kirill
     section 4. Volume Setting 
