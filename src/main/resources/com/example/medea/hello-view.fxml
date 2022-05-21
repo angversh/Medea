@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--описание структуры интерфейса-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="948.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+    <BorderPane prefHeight="560.0" prefWidth="932.0">
+        <left>
+            <VBox id="Vbox" prefHeight="569.0" prefWidth="187.0" style="-fx-background-color: #252526;" BorderPane.alignment="CENTER">
+                <ImageView fitHeight="33.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true" translateY="4.0">
+                    <VBox.margin>
+                        <Insets left="20.0" top="8.0" />
+                    </VBox.margin>
+               <image>
+                  <Image url="C:\Users\user\medea\target\classes\com\example\medea\images\medea_logo.png" />
+               </image>
+
+                </ImageView>
+                <Button id="Button" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="192.0" stylesheets="@style.css" text="Search" textFill="#6b7280" translateY="6.0" wrapText="true">
+                    <VBox.margin>
+                        <Insets left="10.0" right="10.0" top="12.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font name="Yu Gothic Regular" size="12.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" translateX="-57.0">
+                     <image>
+                        <Image url="C:\Users\user\medea\target\classes\com\example\medea\images\icons\serach_gray.png" />
+                     </image></ImageView>
+                    </graphic>
+                </Button>
+                <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="192.0" stylesheets="@style.css" text="Your Library" textFill="#6b7280" translateY="6.0" wrapText="true">
+                    <font>
+                        <Font name="Yu Gothic Regular" size="12.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                    </VBox.margin>
+                    <graphic>
+                        <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true" translateX="-55.0">
+                     <image>
+                        <Image url="C:\Users\user\medea\target\classes\com\example\medea\images\icons\library_green.png" />
+                     </image></ImageView>
+                    </graphic>
+                </Button>
+                <Line endX="148.0" stroke="#373737" translateX="18.0" translateY="15.0" />
+                <Text fill="#6b7280" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Medea!" translateX="39.0" translateY="368.0" wrappingWidth="109.98304748535156" />
+            </VBox>
+        </left>
+        <center>
+            <AnchorPane prefHeight="200.0" prefWidth="763.0" style="-fx-background-color: #1f1f1f;" BorderPane.alignment="CENTER">
+                <Line endX="-104.00001525878906" endY="551.7999877929688" fill="#e5e7eb" layoutX="103.0" layoutY="1.0" startX="-104.0" startY="-5.307112693786621" stroke="#eaeaea" translateY="6.0" />
+                <Line endX="760.800048828125" layoutX="1.0" layoutY="72.0" stroke="#373737" />
+                <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="723.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="C:\Users\user\medea\target\classes\com\example\medea\images\icons\settings.png" />
+               </image></ImageView>
+                <Text fill="WHITE" layoutX="14.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recently Added" translateY="-2.0">
+                    <font>
+                        <Font name="Myanmar Text Bold" size="20.0" />
+                    </font>
+                </Text>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="13.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true" />
+                <Text fill="#fafafa" layoutX="13.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Over It" wrappingWidth="144.38307189941406">
+                    <font>
+                        <Font name="Yu Gothic Bold" size="10.0" />
+                    </font>
+                </Text>
+                <Text fill="#6b7280" layoutX="13.0" layoutY="235.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Summer Walker" wrappingWidth="144.38307189941406">
+                    <font>
+                        <Font name="Yu Gothic Bold" size="10.0" />
+                    </font>
+                </Text>
+            </AnchorPane>
+        </center>
+    </BorderPane>
+</AnchorPane>
