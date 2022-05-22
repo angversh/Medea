@@ -3,16 +3,17 @@
 <!--описание структуры интерфейса-->
 
 <?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medea.HelloController">
-    <BorderPane prefHeight="738.0" prefWidth="1001.0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medea.HelloController">
+    <BorderPane prefHeight="738.0" prefWidth="1001.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
         <left>
-            <VBox id="Vbox" prefHeight="569.0" prefWidth="187.0" style="-fx-background-color: #252526;" BorderPane.alignment="CENTER">
+            <VBox id="Vbox" prefHeight="569.0" prefWidth="187.0" style="-fx-background-color: #252526;">
                 <ImageView fitHeight="33.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true" translateY="4.0">
                     <VBox.margin>
                         <Insets left="20.0" top="8.0" />
@@ -36,7 +37,7 @@
                             </image></ImageView>
                     </graphic>
                 </Button>
-                <Button id="button" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="192.0" stylesheets="@style.css" text="Your Library" textFill="#6b7280" translateY="6.0" wrapText="true">
+                <Button id="button" fx:id="chooseFile" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="192.0" stylesheets="@style.css" text="Your Library" textFill="#6b7280" translateY="6.0" wrapText="true">
                     <font>
                         <Font name="Yu Gothic Regular" size="12.0" />
                     </font>
@@ -49,13 +50,16 @@
                                 <Image url="@images/icons/library_green.png" />
                             </image></ImageView>
                     </graphic>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
                 </Button>
-                <Line endX="148.0" stroke="#373737" translateX="18.0" translateY="15.0" />
+                <Line endX="168.49288940429688" stroke="#373737" translateX="18.0" translateY="15.0" />
                 <Text fill="#6b7280" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Medea!" translateX="37.0" translateY="473.0" wrappingWidth="109.98304748535156" />
             </VBox>
         </left>
         <center>
-            <AnchorPane prefHeight="200.0" prefWidth="763.0" style="-fx-background-color: #1f1f1f;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="200.0" prefWidth="853.0" style="-fx-background-color: #1f1f1f;" BorderPane.alignment="CENTER">
                 <Text fill="WHITE" layoutX="24.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recently Added" translateX="-10.0" translateY="-10.0">
                     <font>
                         <Font name="Myanmar Text Bold" size="20.0" />
@@ -65,16 +69,16 @@
                     <image>
                         <Image url="@images/icons/settings.png" />
                     </image></ImageView>
-                <Line endX="779.39990234375" endY="-7.62939453125E-6" layoutX="1.0" layoutY="72.0" stroke="#373737" />
-                <VBox layoutY="-1.0" prefHeight="560.0" prefWidth="766.0" stylesheets="@style.css" />
 
 
                 <Button id="selected" fx:id="addFileBtn" alignment="CENTER" layoutX="700.0" layoutY="19.0" mnemonicParsing="false" onAction="#addFile" prefHeight="15.0" prefWidth="32.0" styleClass="selected" stylesheets="@style.css" text="+">
-               <font>
-                  <Font name="System Bold" size="15.0" />
-               </font></Button>
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font></Button>
 
 
+                <Line endX="779.39990234375" endY="-7.62939453125E-6" layoutX="1.0" layoutY="72.0" stroke="#373737" />
+                <VBox layoutY="-1.0" prefHeight="560.0" prefWidth="766.0" stylesheets="@style.css" />
                 <ImageView fitHeight="143.0" fitWidth="143.0" layoutX="13.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@images/1.png" />
@@ -126,12 +130,12 @@
                     </font>
                 </Text>
                 <Line endX="-104.0" endY="669.0" fill="#e5e7eb" startX="-104.0" startY="-4.0" stroke="#a1a1a1" translateX="103.0" translateY="5.0" />
-                <ImageView fitHeight="143.0" fitWidth="143.0" layoutX="13.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" translateY="7.0">
+                <ImageView fitHeight="143.0" fitWidth="143.0" layoutX="13.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" translateY="5.0">
                     <image>
                         <Image url="@images/6.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="139.0" fitWidth="139.0" layoutX="13.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true" translateY="9.0">
+                <ImageView fitHeight="139.0" fitWidth="139.0" layoutX="13.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true" translateY="7.0">
                     <image>
                         <Image url="@images/11.png" />
                     </image>
@@ -161,146 +165,147 @@
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#fafafa" layoutX="15.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dawn FM" translateY="4.0" wrappingWidth="76.38301086425781">
+                <Text fill="#fafafa" layoutX="15.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dawn FM" translateY="5.0" wrappingWidth="76.38301086425781">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#6b7280" layoutX="15.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Weeknd" translateY="4.0" wrappingWidth="137.98304748535156">
+                <Text fill="#6b7280" layoutX="15.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Weeknd" translateY="5.0" wrappingWidth="137.98304748535156">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#fafafa" layoutX="167.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meet The Woo" translateY="4.0" wrappingWidth="76.38301086425781">
+                <Text fill="#fafafa" layoutX="167.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meet The Woo" translateY="5.0" wrappingWidth="76.38301086425781">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <ImageView fitHeight="143.0" fitWidth="143.0" layoutX="167.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" translateY="7.0">
+                <ImageView fitHeight="143.0" fitWidth="143.0" layoutX="167.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" translateY="5.0">
                     <image>
                         <Image url="@images/7.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="143.0" fitWidth="143.0" layoutX="320.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" translateY="7.0">
+                <ImageView fitHeight="143.0" fitWidth="143.0" layoutX="320.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" translateY="5.0">
                     <image>
                         <Image url="@images/8.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="143.0" fitWidth="143.0" layoutX="473.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" translateY="7.0">
+                <ImageView fitHeight="143.0" fitWidth="143.0" layoutX="473.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" translateY="5.0">
                     <image>
                         <Image url="@images/9.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="143.0" fitWidth="143.0" layoutX="626.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" translateY="7.0">
+                <ImageView fitHeight="143.0" fitWidth="143.0" layoutX="626.0" layoutY="261.0" pickOnBounds="true" preserveRatio="true" translateY="5.0">
                     <image>
                         <Image url="@images/10.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="139.0" fitWidth="139.0" layoutX="626.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true" translateY="9.0">
+                <ImageView fitHeight="139.0" fitWidth="139.0" layoutX="626.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true" translateY="7.0">
                     <image>
                         <Image url="@images/15.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="139.0" fitWidth="139.0" layoutX="167.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true" translateY="9.0">
+                <ImageView fitHeight="139.0" fitWidth="139.0" layoutX="167.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true" translateY="7.0">
                     <image>
                         <Image url="@images/12.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="139.0" fitWidth="139.0" layoutX="320.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true" translateY="9.0">
+                <ImageView fitHeight="139.0" fitWidth="139.0" layoutX="320.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true" translateY="7.0">
                     <image>
                         <Image url="@images/13.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="139.0" fitWidth="139.0" layoutX="473.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true" translateY="9.0">
+                <ImageView fitHeight="139.0" fitWidth="139.0" layoutX="473.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true" translateY="7.0">
                     <image>
                         <Image url="@images/14.png" />
                     </image>
                 </ImageView>
-                <Text fill="#6b7280" layoutX="167.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pop Smoke" translateY="7.0" wrappingWidth="137.98304748535156">
+                <Text fill="#6b7280" layoutX="167.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pop Smoke" translateY="5.0" wrappingWidth="137.98304748535156">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#fafafa" layoutX="321.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Queen" translateY="7.0" wrappingWidth="76.38301086425781">
+                <Text fill="#fafafa" layoutX="321.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Queen" translateY="5.0" wrappingWidth="76.38301086425781">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#6b7280" layoutX="321.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nicki Minaj" translateY="7.0" wrappingWidth="137.98304748535156">
+                <Text fill="#6b7280" layoutX="321.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nicki Minaj" translateY="5.0" wrappingWidth="137.98304748535156">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#fafafa" layoutX="474.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Issa" translateY="7.0" wrappingWidth="76.38301086425781">
+                <Text fill="#fafafa" layoutX="474.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Issa" translateY="5.0" wrappingWidth="76.38301086425781">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#6b7280" layoutX="474.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21 Savage" translateY="7.0" wrappingWidth="137.98304748535156">
+                <Text fill="#6b7280" layoutX="474.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="21 Savage" translateY="5.0" wrappingWidth="137.98304748535156">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#fafafa" layoutX="628.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plain Jane - Single" translateY="7.0" wrappingWidth="130.7830352783203">
+                <Text fill="#fafafa" layoutX="628.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Plain Jane - Single" translateY="5.0" wrappingWidth="130.7830352783203">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#6b7280" layoutX="628.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A$AP Ferg, Nicki Minaj" translateY="7.0" wrappingWidth="137.98304748535156">
+                <Text fill="#6b7280" layoutX="628.0" layoutY="431.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A$AP Ferg, Nicki Minaj" translateY="5.0" wrappingWidth="137.98304748535156">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#fafafa" layoutX="15.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ctrl" translateY="9.0" wrappingWidth="76.38301086425781">
+                <Text fill="#fafafa" layoutX="15.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ctrl" translateY="7.0" wrappingWidth="76.38301086425781">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#6b7280" layoutX="15.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SZA" translateY="9.0" wrappingWidth="123.58302307128906">
+                <Text fill="#6b7280" layoutX="15.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SZA" translateY="7.0" wrappingWidth="123.58302307128906">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#fafafa" layoutX="320.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="JACKBOYS" translateY="9.0" wrappingWidth="76.38301086425781">
+                <Text fill="#fafafa" layoutX="320.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="JACKBOYS" translateY="7.0" wrappingWidth="76.38301086425781">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#fafafa" layoutX="169.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hot Pink" translateY="9.0" wrappingWidth="76.38301086425781">
+                <Text fill="#fafafa" layoutX="169.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hot Pink" translateY="7.0" wrappingWidth="76.38301086425781">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#fafafa" layoutX="474.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pups - Single" translateY="9.0" wrappingWidth="76.38301086425781">
+                <Text fill="#fafafa" layoutX="474.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pups - Single" translateY="7.0" wrappingWidth="76.38301086425781">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#fafafa" layoutX="627.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Snow Cougar" translateY="9.0" wrappingWidth="76.38301086425781">
+                <Text fill="#fafafa" layoutX="627.0" layoutY="593.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Snow Cougar" translateY="7.0" wrappingWidth="76.38301086425781">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#6b7280" layoutX="169.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doja Cat" translateY="9.0" wrappingWidth="123.58302307128906">
+                <Text fill="#6b7280" layoutX="169.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Doja Cat" translateY="7.0" wrappingWidth="123.58302307128906">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#6b7280" layoutX="319.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jackboys, Travis Scott" translateY="9.0" wrappingWidth="123.58302307128906">
+                <Text fill="#6b7280" layoutX="319.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Jackboys, Travis Scott" translateY="7.0" wrappingWidth="123.58302307128906">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#6b7280" layoutX="475.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A$AP Ferg, A$AP Rocky" translateY="9.0" wrappingWidth="123.58302307128906">
+                <Text fill="#6b7280" layoutX="475.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A$AP Ferg, A$AP Rocky" translateY="7.0" wrappingWidth="123.58302307128906">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
-                <Text fill="#6b7280" layoutX="628.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Yung Gravy" translateY="9.0" wrappingWidth="123.58302307128906">
+                <Text fill="#6b7280" layoutX="628.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Yung Gravy" translateY="7.0" wrappingWidth="123.58302307128906">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
+                <ProgressBar layoutX="550.0" layoutY="420.0" prefWidth="95.0" progress="0.0" stylesheets="@style.css" translateX="144.0" translateY="230.0" />
             </AnchorPane>
         </center>
         <bottom>
@@ -324,16 +329,27 @@
                             <Font name="Yu Gothic Bold" size="10.0" />
                         </font>
                     </Text>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@style.css" translateX="225.0" translateY="5.0">
+                    <Label ellipsisString="0:00" prefHeight="15.0" prefWidth="58.0" text="0:00" textFill="#6b7280" translateX="-21.0" translateY="33.5">
+                        <font>
+                            <Font name="Yu Gothic Regular" size="12.0" />
+                        </font>
+                    </Label>
+                    <Button id="selected" fx:id="playButton" alignment="CENTER" mnemonicParsing="false" onAction="#playMedia" styleClass="selected" stylesheets="@style.css" translateX="208.0" translateY="5.0">
                         <graphic>
                             <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
                                     <Image url="@images/icons/play.png" />
                                 </image>
+                                <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                </cursor>
                             </ImageView>
                         </graphic>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
                     </Button>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@style.css" translateX="217.0" translateY="7.5">
+                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@style.css" translateX="224.0" translateY="7.5">
                         <graphic>
                             <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -342,7 +358,7 @@
                             </ImageView>
                         </graphic>
                     </Button>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@style.css" translateX="125.0" translateY="7.5">
+                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@style.css" translateX="112.0" translateY="7.5">
                         <graphic>
                             <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -351,7 +367,7 @@
                             </ImageView>
                         </graphic>
                     </Button>
-                    <ImageView fitHeight="5.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" translateX="-112.0" translateY="40.0">
+                    <ImageView fitHeight="5.0" fitWidth="500.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" translateX="-112.0" translateY="40.0">
                         <image>
                             <Image url="@images/icons/timeline.png" />
                         </image>
@@ -365,7 +381,7 @@
                             </ImageView>
                         </graphic>
                     </Button>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@style.css" translateX="-465.0" translateY="7.5">
+                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@style.css" translateX="-476.0" translateY="7.5">
                         <graphic>
                             <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -374,7 +390,7 @@
                             </ImageView>
                         </graphic>
                     </Button>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@style.css" translateX="-381.0" translateY="8.5">
+                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@style.css" translateX="-374.0" translateY="8.5">
                         <graphic>
                             <ImageView fitHeight="12.3" fitWidth="12.3" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -383,14 +399,39 @@
                             </ImageView>
                         </graphic>
                     </Button>
-                    <ImageView fitHeight="5.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" translateX="-89.0" translateY="24.5">
+                    <ImageView fitHeight="5.0" fitWidth="500.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" translateX="-89.0" translateY="24.5">
                         <image>
                             <Image url="@images/icons/volume_scale.png" />
                         </image>
                     </ImageView>
+                    <Button id="selected" fx:id="pauseButton" alignment="CENTER" mnemonicParsing="false" onAction="#pauseMedia" scaleX="0.82" scaleY="0.82" scaleZ="0.82" styleClass="selected" stylesheets="@style.css" translateX="-557.0" translateY="5.0">
+                        <graphic>
+                            <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@images/icons/pause.png" />
+                                </image>
+                                <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                </cursor>
+                            </ImageView>
+                        </graphic>
+                        <cursor>
+                            <Cursor fx:constant="HAND" />
+                        </cursor>
+                    </Button>
+                    <Label fx:id="currentLabel" ellipsisString="0:00" prefHeight="15.0" prefWidth="58.0" text="0:00" textFill="#6b7280" translateX="-317.0" translateY="33.5">
+                        <font>
+                            <Font name="Yu Gothic Regular" size="12.0" />
+                        </font>
+                    </Label>
                 </children>
             </HBox>
         </bottom>
     </BorderPane>
     <Line endX="970.0000610351562" endY="-1.5258789289873675E-6" layoutY="624.0" startX="-72.76415252685547" startY="-2.479195536579937E-4" stroke="#adff00" />
+    <ProgressBar fx:id="songProgressBar" layoutX="216.0" layoutY="689.0" prefWidth="500.0" progress="0.0" scaleY="0.2" translateX="53.0" translateY="-33.0" />
+    <Slider fx:id="volumeSlider" layoutX="808.0" layoutY="690.0" prefWidth="80.0" scaleY="0.2" translateX="65.0" translateY="-48.0">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor></Slider>
 </AnchorPane>

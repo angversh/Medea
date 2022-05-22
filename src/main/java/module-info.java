@@ -9,6 +9,7 @@ module com.example.medea {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires javafx.media;
 
     opens com.example.medea to javafx.fxml;
     exports com.example.medea;
