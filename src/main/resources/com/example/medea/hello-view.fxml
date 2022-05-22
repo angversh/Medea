@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medea.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medea.HelloController">
     <BorderPane prefHeight="738.0" prefWidth="1001.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
         <left>
             <VBox id="Vbox" prefHeight="569.0" prefWidth="187.0" style="-fx-background-color: #252526;">
@@ -71,12 +71,6 @@
                     </image></ImageView>
 
 
-                <Button id="selected" fx:id="addFileBtn" alignment="CENTER" layoutX="700.0" layoutY="19.0" mnemonicParsing="false" onAction="#addFile" prefHeight="15.0" prefWidth="32.0" styleClass="selected" stylesheets="@style.css" text="+">
-                    <font>
-                        <Font name="System Bold" size="15.0" />
-                    </font></Button>
-
-
                 <Line endX="779.39990234375" endY="-7.62939453125E-6" layoutX="1.0" layoutY="72.0" stroke="#373737" />
                 <VBox layoutY="-1.0" prefHeight="560.0" prefWidth="766.0" stylesheets="@style.css" />
                 <ImageView fitHeight="143.0" fitWidth="143.0" layoutX="13.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
@@ -89,6 +83,13 @@
                         <Font name="Yu Gothic Bold" size="10.0" />
                     </font>
                 </Text>
+   
+   
+                <Button id="selected" fx:id="addFileBtn" layoutX="700.0" layoutY="19.0" alignment="CENTER" mnemonicParsing="false" onAction="#addFile" prefHeight="15.0" prefWidth="32.0" styleClass="selected" stylesheets="@style.css" text="+">
+                    <font>
+                        <Font name="System Bold" size="15.0" />
+                    </font>
+            </Button>
                 <Text fill="#6b7280" layoutX="15.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Summer Walker" translateY="3.0" wrappingWidth="137.98304748535156">
                     <font>
                         <Font name="Yu Gothic Bold" size="10.0" />
