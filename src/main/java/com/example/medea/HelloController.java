@@ -1,5 +1,6 @@
 package com.example.medea;
 
+import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.event.ActionEvent;
@@ -26,27 +27,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class HelloController {
-
-    @FXML
-    private HBox cardLayout;
-
-    @FXML
-    private Button addFileBtn;
-
-    @FXML
-    private void addFile(ActionEvent event) {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("addFileDialog.fxml"));
-            Parent parent = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage.setTitle("Add new track");
-            stage.setScene(new Scene(parent));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.showAndWait();
-        } catch (Exception e) {
-            System.out.println("Cant load addFileDialog.fxml");
-        }
-    }
+    Player myPlayer = new Player();
     @FXML
     private Button playButton;
     @FXML
@@ -57,6 +38,8 @@ public class HelloController {
     private ImageView imageView;
     @FXML
     private Slider volumeSlider;
+    @FXML
+    private Label startLabel;
     @FXML
     private Label finalLabel;
 
@@ -74,7 +57,6 @@ public class HelloController {
 
 
 
-    private MediaPlayer mediaPlayer;
 
     @FXML
     private ProgressBar songProgressBar;
@@ -94,14 +76,14 @@ public class HelloController {
 
         if (filePath != null){
             Media media = new Media(filePath);
-            mediaPlayer = new MediaPlayer(media);
-            mediaPlayer.play();
+            myPlayer.mediaPlayer = new MediaPlayer(media);
+            myPlayer.mediaPlayer.play();
             beginTimer();
-            volumeSlider.setValue(mediaPlayer.getVolume() * 100);
+            volumeSlider.setValue(myPlayer.mediaPlayer.getVolume() * 100);
             volumeSlider.valueProperty().addListener(new InvalidationListener() {
                 @Override
                 public void invalidated(Observable observable) {
-                    mediaPlayer.setVolume(volumeSlider.getValue() / 100);
+                    myPlayer.mediaPlayer.setVolume(volumeSlider.getValue() / 100);
                 }
             });
         }
@@ -109,19 +91,19 @@ public class HelloController {
 
     @FXML
     private void playMedia(ActionEvent event) {
-        mediaPlayer.play();
+        myPlayer.playMedia();
         beginTimer();
     }
 
     @FXML
     private void stopMedia(ActionEvent event) {
-        mediaPlayer.stop();
+        myPlayer.stopMedia();
         songProgressBar.setProgress(0);
     }
 
     @FXML
     private void pauseMedia(ActionEvent event) {
-        mediaPlayer.pause();
+        myPlayer.pauseMedia();
         cancelTimer();
     }
 
@@ -130,8 +112,30 @@ public class HelloController {
         task = new TimerTask() {
             public void run() {
                 running = true;
-                double current = mediaPlayer.getCurrentTime().toSeconds();
-                double end = mediaPlayer.getTotalDuration().toSeconds();
+                double current = myPlayer.mediaPlayer.getCurrentTime().toSeconds();
+                int start = (int) current;
+                double end = myPlayer.mediaPlayer.getTotalDuration().toSeconds();
+                int finish = (int) end;
+                double a = myPlayer.mediaPlayer.getCurrentTime().toSeconds();
+                double b = myPlayer.mediaPlayer.getTotalDuration().toSeconds();
+
+                int minutesFinish = finish / 60;
+                int secondsFinish = finish - 60 * minutesFinish;
+                Platform.runLater(() -> {
+                    startLabel.setText("0:0" + start);
+                    if (start >= 10) {
+                        startLabel.setText("0:" + start);
+                    }
+                    if (start >= 60) {
+                        int minutesStart = start / 60;
+                        int currentSeconds = (start - 60 * minutesStart);
+                        startLabel.setText(minutesStart + ":" + currentSeconds);
+                        if (currentSeconds < 10) {
+                            startLabel.setText(minutesStart + ":0" + currentSeconds);
+                        }
+                    }
+                    finalLabel.setText(minutesFinish + ":" + secondsFinish);
+                });
                 songProgressBar.setProgress(current/end);
 
                 if (current/end == 1) {

@@ -14,7 +14,7 @@
     -fx-border-color: #1F1F1F;
     -fx-border-width: 2;
 }
-.mouse-moved: hover {
+.mouse-moved:hover {
     -fx-background-color: #6B7280;
     -fx-text-fill: rgb(173, 255, 0);
     -fx-background-radius: 8;

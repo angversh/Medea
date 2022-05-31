@@ -13,7 +13,7 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 970, 687);
         stage.setTitle("Medea");
-        scene.getStylesheets().add("src/main/java/com/example/medea/style.css");
+        scene.getStylesheets().add("style.css");
         stage.setScene(scene);
         stage.show();
     }
