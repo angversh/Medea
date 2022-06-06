@@ -15,6 +15,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -28,9 +29,8 @@ import javafx.stage.StageStyle;
 import javafx.util.Duration;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.net.URL;
+import java.util.*;
 import java.util.function.DoublePredicate;
 
 public class HelloController {
@@ -55,13 +55,17 @@ public class HelloController {
     private MediaView mediaView;
     @FXML
     private Slider sceneSlider;
+    @FXML
+    private ImageView playButt;
+
+
 
     private Timer timer;
     private TimerTask task;
     private boolean running;
-    private Media media;
     private File directory;
     private File[] files;
+    private int count = 0;
 
     @FXML
     private ProgressBar songProgressBar;
@@ -72,7 +76,7 @@ public class HelloController {
     @FXML
     private void handleButtonAction(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
-        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Select mp3 file", "*.mp3", "*.mp4" );
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Select mp3 or mp4 file", "*.mp3", "*.mp4");
         fileChooser.getExtensionFilters().add(filter);
         File file = fileChooser.showOpenDialog(null);
 
@@ -82,7 +86,7 @@ public class HelloController {
         if (filePath != null){
             Media media = new Media(filePath);
             myPlayer.mediaPlayer = new MediaPlayer(media);
-            myPlayer.mediaPlayer.play();
+            myPlayer.playMedia();
             mediaView.setMediaPlayer(myPlayer.mediaPlayer);
             //DoubleProperty width = mediaView.fitWidthProperty();
             //DoubleProperty height = mediaView.fitHeightProperty();
@@ -91,14 +95,22 @@ public class HelloController {
             beginTimer();
             songNameLabel.setText(fileName);
             volumeSlider.setValue(myPlayer.mediaPlayer.getVolume() * 100);
-            volumeSlider.valueProperty().addListener(observable -> myPlayer.mediaPlayer.setVolume(volumeSlider.getValue() / 100));
+            volumeSlider.valueProperty().addListener(observable -> myPlayer.mediaPlayer.setVolume(volumeSlider.getValue() / 350));
         }
     }
 
     @FXML
     private void playMedia(ActionEvent event) {
-        myPlayer.playMedia();
-        beginTimer();
+        if (count % 2 == 0){
+            myPlayer.playMedia();
+            beginTimer();
+            count += 1;
+        }
+        else {
+            myPlayer.pauseMedia();
+            cancelTimer();
+            count += 1;
+        }
     }
 
     @FXML
@@ -145,7 +157,6 @@ public class HelloController {
                     }
                 });
             }
-
         };
         timer.scheduleAtFixedRate(task, 1000, 1000);
     }
