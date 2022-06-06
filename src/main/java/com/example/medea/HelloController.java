@@ -3,7 +3,10 @@ package com.example.medea;
 import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.DoubleProperty;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -21,11 +25,13 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.util.Duration;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.function.DoublePredicate;
 
 public class HelloController {
     Player myPlayer = new Player();
@@ -47,6 +53,8 @@ public class HelloController {
     private Label songNameLabel;
     @FXML
     private MediaView mediaView;
+    @FXML
+    private Slider sceneSlider;
 
     private Timer timer;
     private TimerTask task;
@@ -76,6 +84,10 @@ public class HelloController {
             myPlayer.mediaPlayer = new MediaPlayer(media);
             myPlayer.mediaPlayer.play();
             mediaView.setMediaPlayer(myPlayer.mediaPlayer);
+            //DoubleProperty width = mediaView.fitWidthProperty();
+            //DoubleProperty height = mediaView.fitHeightProperty();
+            //width.bind(Bindings.selectDouble(mediaView.sceneProperty(), "width"));
+            //height.bind(Bindings.selectDouble(mediaView.sceneProperty(), "height"));
             beginTimer();
             songNameLabel.setText(fileName);
             volumeSlider.setValue(myPlayer.mediaPlayer.getVolume() * 100);
@@ -87,12 +99,6 @@ public class HelloController {
     private void playMedia(ActionEvent event) {
         myPlayer.playMedia();
         beginTimer();
-    }
-
-    @FXML
-    private void stopMedia(ActionEvent event) {
-        myPlayer.stopMedia();
-        songProgressBar.setProgress(0);
     }
 
     @FXML
@@ -109,6 +115,7 @@ public class HelloController {
                 double current = myPlayer.mediaPlayer.getCurrentTime().toSeconds();
                 int start = (int) current;
                 double end = myPlayer.mediaPlayer.getTotalDuration().toSeconds();
+                sceneSlider.setMax(end);
                 int finish = (int) end;
                 int minutesFinish = finish / 60;
                 int secondsFinish = finish - 60 * minutesFinish;
@@ -131,11 +138,16 @@ public class HelloController {
                 if (current/end == 1) {
                     cancelTimer();
                 }
+                sceneSlider.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                    @Override
+                    public void handle(MouseEvent event) {
+                        myPlayer.mediaPlayer.seek(Duration.seconds(sceneSlider.getValue()));
+                    }
+                });
             }
 
         };
         timer.scheduleAtFixedRate(task, 1000, 1000);
-
     }
 
     private void cancelTimer(){

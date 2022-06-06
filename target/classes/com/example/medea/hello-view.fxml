@@ -46,7 +46,7 @@
                             </image></ImageView>
                     </graphic>
                 </Button>
-                <Button id="button" fx:id="chooseFile" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="192.0" stylesheets="@../../../style.css" text="Your Library" textFill="#6b7280" translateY="6.0" wrapText="true">
+                <Button id="button" fx:id="chooseFile" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="192.0" stylesheets="@../../../style.css" text="Add Track or Video" textFill="#6b7280" translateY="6.0" wrapText="true">
                     <font>
                         <Font name="Yu Gothic Regular" size="12.0" />
                     </font>
@@ -54,7 +54,7 @@
                         <Insets left="10.0" right="10.0" />
                     </VBox.margin>
                     <graphic>
-                        <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true" translateX="-55.0">
+                        <ImageView fitHeight="14.0" fitWidth="14.0" pickOnBounds="true" preserveRatio="true" translateX="-64.0">
                             <image>
                                 <Image url="@../../../images/icons/library_green.png" />
                             </image></ImageView>
@@ -89,14 +89,14 @@
                 <Line endX="779.39990234375" endY="-7.62939453125E-6" layoutX="1.0" layoutY="72.0" stroke="#373737" />
                 <VBox layoutY="71.0" prefHeight="559.0" prefWidth="778.0" stylesheets="@../../../style.css">
                <children>
-                  <MediaView fx:id="mediaView" fitHeight="550.0" fitWidth="1000.0" />
+                  <MediaView fx:id="mediaView" fitHeight="550.0" fitWidth="780.0" />
                </children></VBox>
                 <Line endX="-104.0" endY="669.0" fill="#e5e7eb" startX="-104.0" startY="-4.0" stroke="#a1a1a1" translateX="103.0" translateY="5.0" />
                 <ProgressBar layoutX="550.0" layoutY="420.0" prefWidth="95.0" progress="0.0" stylesheets="@../../../style.css" translateX="144.0" translateY="230.0" />
             </AnchorPane>
         </center>
         <bottom>
-            <HBox fillHeight="false" prefHeight="65.0" prefWidth="1237.0" styleClass="transparent" stylesheets="@../../../style.css" translateY="-47.0" BorderPane.alignment="CENTER">
+            <HBox fillHeight="false" prefHeight="72.0" prefWidth="1001.0" styleClass="transparent" stylesheets="@../../../style.css" translateY="-47.0" BorderPane.alignment="CENTER">
                 <children>
                     <ImageView fx:id="imageView" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="7.0">
                         <image>
@@ -106,19 +106,19 @@
                             <Insets />
                         </HBox.margin>
                     </ImageView>
-                    <Label fx:id="startLabel" ellipsisString="0:00" prefHeight="15.0" prefWidth="58.0" text="0:00" textFill="#6b7280" translateX="192.0" translateY="33.5">
+                    <Label fx:id="startLabel" ellipsisString="0:00" prefHeight="15.0" prefWidth="58.0" text="0:00" textFill="#6b7280" translateX="183.0" translateY="33.5">
                         <font>
                             <Font name="Yu Gothic Regular" size="12.0" />
                         </font>
                     </Label>
-               <Label fx:id="songNameLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="95.0" scaleX="3.0" scaleY="3.0" text="SongName" translateX="48.0" translateY="21.0">
+               <Label fx:id="songNameLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="17.0" prefWidth="95.0" scaleX="3.0" scaleY="3.0" text="SongName" textFill="WHITE" translateX="48.0" translateY="21.0">
                   <font>
                      <Font size="3.5" />
                   </font>
                </Label>
-                    <Button id="selected" fx:id="playButton" alignment="CENTER" mnemonicParsing="false" onAction="#playMedia" styleClass="selected" stylesheets="@../../../style.css" translateX="208.0" translateY="5.0">
+                    <Button id="selected" fx:id="playButton" alignment="CENTER" mnemonicParsing="false" onAction="#playMedia" styleClass="selected" stylesheets="@../../../style.css" translateX="300.0" translateY="5.0">
                         <graphic>
-                            <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" translateX="134.0">
+                            <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
                                     <Image url="@../../../images/icons/play.png" />
                                 </image>
@@ -131,7 +131,7 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </Button>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="356.0" translateY="7.5">
+                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="287.0" translateY="7.5">
                         <graphic>
                             <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -140,7 +140,7 @@
                             </ImageView>
                         </graphic>
                     </Button>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="247.0" translateY="7.5">
+                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="183.0" translateY="7.5">
                         <graphic>
                             <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -149,12 +149,7 @@
                             </ImageView>
                         </graphic>
                     </Button>
-                    <ImageView fitHeight="5.0" fitWidth="500.0" opacity="0.0" pickOnBounds="true" preserveRatio="true" translateX="-112.0" translateY="40.0">
-                        <image>
-                            <Image url="@../../../images/icons/timeline.png" />
-                        </image>
-                    </ImageView>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="25.0" translateY="12.0">
+                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="521.0" translateY="12.0">
                         <graphic>
                             <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -163,7 +158,7 @@
                             </ImageView>
                         </graphic>
                     </Button>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="-333.0" translateY="7.5">
+                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="103.0" translateY="7.5">
                         <graphic>
                             <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -172,7 +167,7 @@
                             </ImageView>
                         </graphic>
                     </Button>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="-242.0" translateY="8.5">
+                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="185.0" translateY="8.5">
                         <graphic>
                             <ImageView fitHeight="12.3" fitWidth="12.3" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -186,7 +181,7 @@
                             <Image url="@../../../images/icons/volume_scale.png" />
                         </image>
                     </ImageView>
-                    <Button id="selected" fx:id="pauseButton" alignment="CENTER" mnemonicParsing="false" onAction="#pauseMedia" scaleX="0.82" scaleY="0.82" scaleZ="0.82" styleClass="selected" stylesheets="@../../../style.css" translateX="-425.0" translateY="5.0">
+                    <Button id="selected" fx:id="pauseButton" alignment="CENTER" mnemonicParsing="false" onAction="#pauseMedia" scaleX="0.82" scaleY="0.82" scaleZ="0.82" styleClass="selected" stylesheets="@../../../style.css" translateX="-15.0" translateY="5.0">
                         <graphic>
                             <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -201,7 +196,7 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </Button>
-                    <Label fx:id="finalLabel" ellipsisString="0:00" prefHeight="15.0" prefWidth="58.0" text="0:00" textFill="#6b7280" translateX="-250.0" translateY="33.5">
+                    <Label fx:id="finalLabel" ellipsisString="0:00" prefHeight="15.0" prefWidth="58.0" text="0:00" textFill="#6b7280" translateX="250.0" translateY="32.5">
                         <font>
                             <Font name="Yu Gothic Regular" size="12.0" />
                         </font>
@@ -210,10 +205,14 @@
             </HBox>
         </bottom>
     </BorderPane>
-    <Line endX="970.0000610351562" endY="-1.5258789289873675E-6" layoutY="624.0" startX="-72.76415252685547" startY="-2.479195536579937E-4" stroke="#adff00" />
+    <Line endX="1001.0" layoutY="624.0" startX="-7.62939453125E-6" stroke="#adff00" />
     <ProgressBar fx:id="songProgressBar" layoutX="216.0" layoutY="689.0" prefWidth="500.0" progress="0.0" scaleY="0.19999999999999996" translateX="53.0" translateY="-33.0" />
     <Slider fx:id="volumeSlider" layoutX="808.0" layoutY="690.0" prefWidth="80.0" scaleY="1.2" translateX="50.0" translateY="-48.0">
         <cursor>
             <Cursor fx:constant="HAND" />
         </cursor></Slider>
+   <Slider fx:id="sceneSlider" layoutX="263.0" layoutY="658.0" max="0.0" opacity="0.0" prefHeight="14.0" prefWidth="513.0">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Slider>
 </AnchorPane>
