@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -68,7 +69,7 @@
         </left>
         <center>
             <AnchorPane prefHeight="200.0" prefWidth="853.0" style="-fx-background-color: #1f1f1f;" BorderPane.alignment="CENTER">
-                <Text fill="WHITE" layoutX="24.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recently Added" translateX="-10.0" translateY="-10.0">
+                <Text fill="WHITE" layoutX="24.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Main Page" translateX="-10.0" translateY="-10.0">
                     <font>
                         <Font name="Myanmar Text Bold" size="20.0" />
                     </font>
@@ -86,13 +87,16 @@
 
 
                 <Line endX="779.39990234375" endY="-7.62939453125E-6" layoutX="1.0" layoutY="72.0" stroke="#373737" />
-                <VBox layoutY="-1.0" prefHeight="560.0" prefWidth="766.0" stylesheets="@../../../style.css" />
+                <VBox layoutY="71.0" prefHeight="559.0" prefWidth="778.0" stylesheets="@../../../style.css">
+               <children>
+                  <MediaView fx:id="mediaView" fitHeight="550.0" fitWidth="1000.0" />
+               </children></VBox>
                 <Line endX="-104.0" endY="669.0" fill="#e5e7eb" startX="-104.0" startY="-4.0" stroke="#a1a1a1" translateX="103.0" translateY="5.0" />
                 <ProgressBar layoutX="550.0" layoutY="420.0" prefWidth="95.0" progress="0.0" stylesheets="@../../../style.css" translateX="144.0" translateY="230.0" />
             </AnchorPane>
         </center>
         <bottom>
-            <HBox fillHeight="false" prefHeight="66.0" prefWidth="970.0" styleClass="transparent" stylesheets="@../../../style.css" translateY="-47.0" BorderPane.alignment="CENTER">
+            <HBox fillHeight="false" prefHeight="65.0" prefWidth="1237.0" styleClass="transparent" stylesheets="@../../../style.css" translateY="-47.0" BorderPane.alignment="CENTER">
                 <children>
                     <ImageView fx:id="imageView" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="7.0">
                         <image>
@@ -150,7 +154,7 @@
                             <Image url="@../../../images/icons/timeline.png" />
                         </image>
                     </ImageView>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="113.0" translateY="12.0">
+                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="25.0" translateY="12.0">
                         <graphic>
                             <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -197,7 +201,7 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </Button>
-                    <Label fx:id="finalLabel" ellipsisString="0:00" prefHeight="15.0" prefWidth="58.0" text="0:00" textFill="#6b7280" translateX="-185.0" translateY="33.5">
+                    <Label fx:id="finalLabel" ellipsisString="0:00" prefHeight="15.0" prefWidth="58.0" text="0:00" textFill="#6b7280" translateX="-250.0" translateY="33.5">
                         <font>
                             <Font name="Yu Gothic Regular" size="12.0" />
                         </font>
@@ -208,7 +212,7 @@
     </BorderPane>
     <Line endX="970.0000610351562" endY="-1.5258789289873675E-6" layoutY="624.0" startX="-72.76415252685547" startY="-2.479195536579937E-4" stroke="#adff00" />
     <ProgressBar fx:id="songProgressBar" layoutX="216.0" layoutY="689.0" prefWidth="500.0" progress="0.0" scaleY="0.19999999999999996" translateX="53.0" translateY="-33.0" />
-    <Slider fx:id="volumeSlider" layoutX="808.0" layoutY="690.0" prefWidth="80.0" scaleY="1.2" translateX="65.0" translateY="-48.0">
+    <Slider fx:id="volumeSlider" layoutX="808.0" layoutY="690.0" prefWidth="80.0" scaleY="1.2" translateX="50.0" translateY="-48.0">
         <cursor>
             <Cursor fx:constant="HAND" />
         </cursor></Slider>

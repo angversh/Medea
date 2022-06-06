@@ -16,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.media.MediaView;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -44,6 +45,8 @@ public class HelloController {
     private Label finalLabel;
     @FXML
     private Label songNameLabel;
+    @FXML
+    private MediaView mediaView;
 
     private Timer timer;
     private TimerTask task;
@@ -61,7 +64,7 @@ public class HelloController {
     @FXML
     private void handleButtonAction(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
-        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Select mp3 file", "*.mp3");
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Select mp3 file", "*.mp3", "*.mp4" );
         fileChooser.getExtensionFilters().add(filter);
         File file = fileChooser.showOpenDialog(null);
 
@@ -72,6 +75,7 @@ public class HelloController {
             Media media = new Media(filePath);
             myPlayer.mediaPlayer = new MediaPlayer(media);
             myPlayer.mediaPlayer.play();
+            mediaView.setMediaPlayer(myPlayer.mediaPlayer);
             beginTimer();
             songNameLabel.setText(fileName);
             volumeSlider.setValue(myPlayer.mediaPlayer.getVolume() * 100);

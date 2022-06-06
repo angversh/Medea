@@ -13,6 +13,11 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 970, 687);
         stage.setTitle("Medea");
+        scene.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                stage.setFullScreen(true);
+            }
+        });
         scene.getStylesheets().add("style.css");
         stage.setScene(scene);
         stage.show();
