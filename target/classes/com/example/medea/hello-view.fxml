@@ -116,9 +116,9 @@
                      <Font size="3.5" />
                   </font>
                </Label>
-                    <Button id="selected" fx:id="playButton" alignment="CENTER" mnemonicParsing="false" onAction="#playMedia" styleClass="selected" stylesheets="@../../../style.css" translateX="287.0" translateY="5.0">
+                    <Button id="selected" fx:id="playButton" alignment="CENTER" mnemonicParsing="false" onAction="#playMedia" styleClass="selected" stylesheets="@../../../style.css" translateX="287.0">
                         <graphic>
-                            <ImageView fx:id="playButt" fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                            <ImageView fx:id="playButt" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
                                     <Image url="@../../../images/icons/play.png" />
                                 </image>
@@ -131,7 +131,7 @@
                             <Cursor fx:constant="HAND" />
                         </cursor>
                     </Button>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="277.0" translateY="7.5">
+                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="275.0" translateY="7.5">
                         <graphic>
                             <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -140,7 +140,7 @@
                             </ImageView>
                         </graphic>
                     </Button>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="190.0" translateY="7.5">
+                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="184.0" translateY="7.5">
                         <graphic>
                             <ImageView fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -158,7 +158,7 @@
                             </ImageView>
                         </graphic>
                     </Button>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="107.0" translateY="7.5">
+                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="104.0" translateY="7.5">
                         <graphic>
                             <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -167,7 +167,7 @@
                             </ImageView>
                         </graphic>
                     </Button>
-                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="179.0" translateY="8.5">
+                    <Button id="selected" alignment="CENTER" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="172.0" translateY="8.5">
                         <graphic>
                             <ImageView fitHeight="12.3" fitWidth="12.3" pickOnBounds="true" preserveRatio="true">
                                 <image>

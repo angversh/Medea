@@ -58,14 +58,21 @@ public class HelloController {
     @FXML
     private ImageView playButt;
 
-
-
     private Timer timer;
     private TimerTask task;
     private boolean running;
+    private boolean repeated;
     private File directory;
     private File[] files;
     private int count = 0;
+    String urlPause = "file:src/main/resources/images/icons/pause.png";
+    Image imagePause = new Image(urlPause);
+    String urlPlay = "file:src/main/resources/images/icons/play.png";
+    Image imagePlay = new Image(urlPlay);
+
+
+
+    boolean backgroundLoading = true;
 
     @FXML
     private ProgressBar songProgressBar;
@@ -105,18 +112,23 @@ public class HelloController {
             myPlayer.playMedia();
             beginTimer();
             count += 1;
+            playButt.setImage(imagePause);
         }
         else {
             myPlayer.pauseMedia();
             cancelTimer();
             count += 1;
+            playButt.setImage(imagePlay);
         }
     }
 
     @FXML
-    private void pauseMedia(ActionEvent event) {
-        myPlayer.pauseMedia();
-        cancelTimer();
+    private void repeat(ActionEvent event){
+
+    }
+    @FXML
+    private void plusFiveSec(ActionEvent event){
+
     }
 
     private void beginTimer(){
