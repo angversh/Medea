@@ -100,7 +100,7 @@
                 <children>
                     <ImageView fx:id="imageView" fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" translateX="10.0" translateY="7.0">
                         <image>
-                            <Image url="@../../../images/13.png" />
+                            <Image url="@../../../images/icons/default_cover.png" />
                         </image>
                         <HBox.margin>
                             <Insets />
