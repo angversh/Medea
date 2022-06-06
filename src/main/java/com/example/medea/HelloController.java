@@ -75,12 +75,7 @@ public class HelloController {
             beginTimer();
             songNameLabel.setText(fileName);
             volumeSlider.setValue(myPlayer.mediaPlayer.getVolume() * 100);
-            volumeSlider.valueProperty().addListener(new InvalidationListener() {
-                @Override
-                public void invalidated(Observable observable) {
-                    myPlayer.mediaPlayer.setVolume(volumeSlider.getValue() / 100);
-                }
-            });
+            volumeSlider.valueProperty().addListener(observable -> myPlayer.mediaPlayer.setVolume(volumeSlider.getValue() / 100));
         }
     }
 
@@ -111,9 +106,6 @@ public class HelloController {
                 int start = (int) current;
                 double end = myPlayer.mediaPlayer.getTotalDuration().toSeconds();
                 int finish = (int) end;
-                double a = myPlayer.mediaPlayer.getCurrentTime().toSeconds();
-                double b = myPlayer.mediaPlayer.getTotalDuration().toSeconds();
-
                 int minutesFinish = finish / 60;
                 int secondsFinish = finish - 60 * minutesFinish;
                 Platform.runLater(() -> {
@@ -132,7 +124,6 @@ public class HelloController {
                     finalLabel.setText(minutesFinish + ":" + secondsFinish);
                 });
                 songProgressBar.setProgress(current/end);
-
                 if (current/end == 1) {
                     cancelTimer();
                 }

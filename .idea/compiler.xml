@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="medea" />
+        <module name="MedeaMain" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="medea" target="17" />
+      <module name="MedeaMain" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

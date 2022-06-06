@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/medea.iml" filepath="$PROJECT_DIR$/medea.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MedeaMain.iml" filepath="$PROJECT_DIR$/.idea/MedeaMain.iml" />
     </modules>
   </component>
 </project>
