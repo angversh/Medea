@@ -34,11 +34,16 @@ import java.util.*;
 import java.util.function.DoublePredicate;
 
 public class HelloController {
+
     Player myPlayer = new Player();
     @FXML
     private Button playButton;
     @FXML
     private Button chooseFile;
+    @FXML
+    public Button createPlaylist;
+    @FXML
+    public Button openPlaylist;
     @FXML
     private Button pauseButton;
     @FXML

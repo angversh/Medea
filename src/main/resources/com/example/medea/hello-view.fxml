@@ -108,6 +108,48 @@
                   <Cursor fx:constant="HAND" />
               </cursor>
           </Button>
+          <Button id="button" fx:id="createPlaylist" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="157.0" stylesheets="@../../../style.css" text=" Create Playlist" textFill="#6b7280" translateY="6.0" wrapText="true">
+              <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+              </font>
+              <VBox.margin>
+                  <Insets left="10.0" right="9.0" top="8.0"/>
+              </VBox.margin>
+              <graphic>
+                  <ImageView blendMode="LIGHTEN" fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true" translateX="-55.0">
+                      <image>
+                          <Image url="@../../../images/icons/library_green.png" />
+                      </image>
+                      <effect>
+                          <ColorAdjust contrast="1.0" saturation="1.0" />
+                      </effect>
+                  </ImageView>
+              </graphic>
+              <cursor>
+                  <Cursor fx:constant="HAND" />
+              </cursor>
+          </Button>
+          <Button id="button" fx:id="openPlaylist" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="27.0" prefWidth="157.0" stylesheets="@../../../style.css" text=" Open Playlist" textFill="#6b7280" translateY="6.0" wrapText="true">
+              <font>
+                  <Font name="Yu Gothic Regular" size="12.0" />
+              </font>
+              <VBox.margin>
+                  <Insets left="10.0" right="9.0" top="8.0"/>
+              </VBox.margin>
+              <graphic>
+                  <ImageView blendMode="LIGHTEN" fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true" translateX="-55.0">
+                      <image>
+                          <Image url="@../../../images/icons/library_green.png" />
+                      </image>
+                      <effect>
+                          <ColorAdjust contrast="1.0" saturation="1.0" />
+                      </effect>
+                  </ImageView>
+              </graphic>
+              <cursor>
+                  <Cursor fx:constant="HAND" />
+              </cursor>
+          </Button>
           <Line endX="155.49288940429688" stroke="#373737" translateX="10.0" translateY="15.0" />
       </VBox>
     <Line endX="1004.0" layoutX="-4.0" layoutY="624.0" opacity="0.0" startX="-43.00000762939453" stroke="#adff00" translateX="3.0" translateY="1.0" AnchorPane.bottomAnchor="65.5" AnchorPane.leftAnchor="-47.50000762939453" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="623.5" />
