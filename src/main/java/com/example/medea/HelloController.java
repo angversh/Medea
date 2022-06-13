@@ -11,31 +11,31 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.Slider;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
-import javafx.stage.FileChooser;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
+import javafx.stage.*;
 import javafx.util.Duration;
 
 import java.io.File;
 import java.net.URL;
 import java.util.*;
 import java.util.function.DoublePredicate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class HelloController {
 
     Player myPlayer = new Player();
+
+    @FXML
+    public TextField newPlaylistName;
     @FXML
     private Button playButton;
     @FXML
@@ -62,6 +62,8 @@ public class HelloController {
     private Slider sceneSlider;
     @FXML
     private ImageView playButt;
+    @FXML
+    private ProgressBar songProgressBar;
 
     private Timer timer;
     private TimerTask task;
@@ -76,12 +78,7 @@ public class HelloController {
     String urlPlay = "file:src/main/resources/images/icons/play.png";
     Image imagePlay = new Image(urlPlay);
 
-
-
     boolean backgroundLoading = true;
-
-    @FXML
-    private ProgressBar songProgressBar;
 
     public HelloController() {
     }
@@ -182,4 +179,37 @@ public class HelloController {
         running = false;
         timer.cancel();
     }
+
+    @FXML
+    private void openPlaylistCreation(ActionEvent event) {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("createPlaylistDialog.fxml"));
+            Parent parent = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Create new Playlist");
+            stage.setScene(new Scene(parent));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.showAndWait();
+        } catch (Exception e) {
+            System.out.println("Can't load 'create playlist' window");
+        }
+    }
+
+    @FXML
+    private void createPlaylist(ActionEvent event) {
+        Pattern newPlaylistNamePattern = Pattern.compile("\\w+");
+        Matcher newPlaylistNameMatcher = newPlaylistNamePattern.matcher(newPlaylistName.getText());
+        if (newPlaylistNameMatcher.matches()){
+            final DirectoryChooser directoryChooser = new DirectoryChooser();
+            directoryChooser.setTitle("Select a directory for your new playlist");
+            directoryChooser.setInitialDirectory(new File(System.getProperty("user.home")));
+            File dir = directoryChooser.showDialog(null);
+            if (dir != null) {
+                String newPlaylistPath = dir.getAbsolutePath() + newPlaylistName.getText() ;
+
+            }
+        }
+
+    }
+
 }

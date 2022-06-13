@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="300.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medea.HelloController">
+<AnchorPane prefHeight="300.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/17.0.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medea.HelloController">
    <children>
       <VBox prefHeight="300.0" prefWidth="350.0" style="-fx-background-color: #252526;" BorderPane.alignment="CENTER">
          <children>

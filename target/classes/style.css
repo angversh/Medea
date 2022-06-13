@@ -3,6 +3,9 @@
     -fx-text-fill: rgb(173, 255, 0);
     -fx-background-radius: 8;
 }
+.button:hover {
+    -fx-background-color: #515157;
+}
 .selected {
     -fx-background-color: #6B7280;
     -fx-text-fill: rgb(107, 114, 128);

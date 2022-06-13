@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: #252526;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medea.HelloController">
+   <children>
+      <Label layoutX="113.0" layoutY="29.0" prefHeight="22.0" prefWidth="123.0" text="Name new playlist" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="newPlaylistName" layoutX="13.0" layoutY="60.0" prefHeight="31.0" prefWidth="321.0" promptText="another one playlist">
+         <font>
+            <Font size="13.0" />
+         </font></TextField>
+      <Label layoutX="116.0" layoutY="108.0" text="Select a directory" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
