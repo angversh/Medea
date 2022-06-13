@@ -4,21 +4,20 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: #252526;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medea.HelloController">
+<AnchorPane prefHeight="170.0" prefWidth="350.0" style="-fx-background-color: #252526;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medea.HelloController">
    <children>
-      <Label layoutX="113.0" layoutY="29.0" prefHeight="22.0" prefWidth="123.0" text="Name new playlist" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Label layoutX="36.0" layoutY="28.0" prefHeight="22.0" prefWidth="276.0" text="Name new playlist and select its directory" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="newPlaylistName" layoutX="13.0" layoutY="60.0" prefHeight="31.0" prefWidth="321.0" promptText="another one playlist">
+      <TextField fx:id="newPlaylistName" layoutX="14.0" layoutY="69.0" prefHeight="31.0" prefWidth="321.0" promptText="another one playlist" stylesheets="@../../../style.css">
          <font>
             <Font size="13.0" />
          </font></TextField>
-      <Label layoutX="116.0" layoutY="108.0" text="Select a directory" textFill="WHITE">
+      <Button layoutX="118.0" layoutY="117.0" mnemonicParsing="false" onAction="#createPlaylist" stylesheets="@../../../style.css" text="create playlist">
          <font>
             <Font size="15.0" />
-         </font>
-      </Label>
+         </font></Button>
    </children>
 </AnchorPane>

@@ -24,7 +24,12 @@ import javafx.stage.*;
 import javafx.util.Duration;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.*;
 import java.util.function.DoublePredicate;
 import java.util.regex.Matcher;
@@ -73,6 +78,7 @@ public class HelloController {
     private File[] files;
     private boolean isPlaying;
     private int count = 0;
+    private String currentPlaylist;
     String urlPause = "file:src/main/resources/images/icons/pause.png";
     Image imagePause = new Image(urlPause);
     String urlPlay = "file:src/main/resources/images/icons/play.png";
@@ -205,11 +211,22 @@ public class HelloController {
             directoryChooser.setInitialDirectory(new File(System.getProperty("user.home")));
             File dir = directoryChooser.showDialog(null);
             if (dir != null) {
-                String newPlaylistPath = dir.getAbsolutePath() + newPlaylistName.getText() ;
-
+                String newPlaylistPath = dir.getAbsolutePath() + "'" + newPlaylistName.getText()  + ".txt";
+                newPlaylistPath = newPlaylistPath.replaceAll("'", "\\\\");
+                try {
+                    File newPlaylist = new File(newPlaylistPath);
+                    if (newPlaylist.createNewFile())
+                        System.out.println("New playlist created");
+                    else
+                        System.out.println("This playlist already exists");
+                }
+                catch (Exception e) {
+                    System.err.println(e);
+                }
+                currentPlaylist = newPlaylistPath;
+                ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
             }
         }
-
     }
 
 }
