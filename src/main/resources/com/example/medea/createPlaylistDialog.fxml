@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="170.0" prefWidth="350.0" style="-fx-background-color: #252526;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.medea.HelloController">
    <children>
-      <Label layoutX="36.0" layoutY="28.0" prefHeight="22.0" prefWidth="276.0" text="Name new playlist and select its directory" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Label layoutX="36.0" layoutY="14.0" prefHeight="45.0" prefWidth="276.0" text="Name new playlist and select its directory&#10;(use only numbers, letters or underscores" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font size="15.0" />
          </font>
