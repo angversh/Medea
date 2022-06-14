@@ -9,6 +9,8 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.io.FileWriter;
 import java.util.*;
 import java.io.File;
 //angversh
@@ -222,6 +224,9 @@ public class HelloController {
     public void shuffleTrack() {
         isShuffled = !isShuffled;
     }
+    public boolean isCycled() {
+        return isCycled;
+    }
     //angversh
     @FXML
     private void openPlaylistCreation(ActionEvent event) {
@@ -250,6 +255,10 @@ public class HelloController {
             if (dir != null) {
                 String newPlaylistPath = dir.getAbsolutePath() + "'" + newPlaylistName.getText()  + ".txt";
                 newPlaylistPath = newPlaylistPath.replaceAll("'", "\\\\");
+                FileChooser TracksFileChooser = new FileChooser();
+                FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Select mp3 or mp4 file", "*.mp3", "*.mp4");
+                TracksFileChooser.getExtensionFilters().add(filter);
+                List<File> TracksPaths = TracksFileChooser.showOpenMultipleDialog(null);
                 try {
                     File newPlaylist = new File(newPlaylistPath);
                     if (newPlaylist.createNewFile())
@@ -260,13 +269,20 @@ public class HelloController {
                 catch (Exception e) {
                     System.err.println(e);
                 }
+                try {
+                    FileWriter writer = new FileWriter(newPlaylistPath);
+                    for (File track : TracksPaths) {
+                        String trackPath = track.toURI().toString();
+                        writer.write(trackPath + System.getProperty("line.separator"));
+                    }
+                    writer.close();
+                }
+                catch (Exception e) {
+                    System.err.println(e);
+                }
                 currentPlaylist = newPlaylistPath;
                 ((Stage)(((Button)event.getSource()).getScene().getWindow())).close();
             }
         }
-    }
-
-    public boolean isCycled() {
-        return isCycled;
     }
 }
