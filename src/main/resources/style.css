@@ -1,0 +1,59 @@
+.button {
+    -fx-background-color: #39393B;
+    -fx-text-fill: rgb(173, 255, 0);
+    -fx-background-radius: 8;
+}
+.button:hover {
+    -fx-background-color: #515157;
+}
+.selected {
+    -fx-background-color: #6B7280;
+    -fx-text-fill: rgb(107, 114, 128);
+    -fx-background-radius: 8;
+    -fx-background-insets: 37, 37, 38;
+}
+.transparent {
+    -fx-background-color: #1F1F1F;
+    -fx-border-color: #1F1F1F;
+    -fx-border-width: 2;
+}
+.mouse-moved:hover {
+    -fx-background-color: #6B7280;
+    -fx-text-fill: rgb(173, 255, 0);
+    -fx-background-radius: 8;
+    -fx-background-insets: 37, 37, 38;
+}
+.progress-bar {
+    -fx-accent: #ADFF00;
+    -fx-border-radius: 0;
+    -fx-background-radius: 0;
+    -fx-text-box-border: transparent;
+    -fx-control-inner-background: transparent;
+}
+.volume-slider {
+    -fx-color: #ADFF00;
+    -fx-control-inner-background: #FFFFFF;
+}
+.menu {
+    -fx-border-width: 1;
+    -fx-border-color: #ADFF00;
+}
+/*
+.upper-buttons {
+    -fx-text-fill: #ADFF00;
+    -fx-background-radius: 8;
+    -fx-border-color: #ADFF00;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-color: 181818;
+    -fx-underline: true;
+} */
+.upper-buttons {
+    -fx-text-fill: #6B7280;
+    -fx-background-color: 181818;
+}
+.bottom-buttons {
+    -fx-background-color: #1F1F1F;
+    -fx-text-fill: #1F1F1F;
+}
+
