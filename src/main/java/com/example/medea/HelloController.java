@@ -1,5 +1,7 @@
 package com.example.medea;
 //angversh
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,8 +11,9 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
+import java.io.*;
 import java.util.*;
-import java.io.File;
 //angversh
 import javafx.application.Platform;
 import javafx.beans.InvalidationListener;
@@ -36,7 +39,6 @@ import javafx.stage.*;
 import javafx.util.Duration;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -46,6 +48,7 @@ import java.util.*;
 import java.util.function.DoublePredicate;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class HelloController {
 
@@ -90,7 +93,12 @@ public class HelloController {
     @FXML
     private ListView<String> playList;
 
-    private ArrayList<String> playlist_names = new ArrayList<>();
+    private ArrayList<String> playlistPaths = new ArrayList<String>();
+
+
+    private boolean trackIsOn;
+    double current;
+    double end;
 
     private Timer timer;
     private TimerTask task;
@@ -110,47 +118,71 @@ public class HelloController {
     Image imagePause = new Image(urlPause);
     String urlPlay = "file:src/main/resources/images/icons/play.png";
     Image imagePlay = new Image(urlPlay);
-    //angversh
+
     String urlCycle = "file:src/main/resources/images/icons/repeat.png";
     Image imageCycle = new Image(urlCycle);
     String urlCycleOn = "file:src/main/resources/images/icons/repeat_on.png";
     Image imageCycleOn = new Image(urlCycleOn);
-    //angversh
-
 
     boolean backgroundLoading = true;
+    int index = 0;
+
 
     public HelloController() {
     }
+    @FXML
+    private void listenPlaylist(ActionEvent event) throws IOException {
+        FileChooser fileChooser = new FileChooser();
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Select txt file with dir of tracks","*.txt");
+        fileChooser.getExtensionFilters().add(filter);
+        File file = fileChooser.showOpenDialog(null);
+        FileReader fr = new FileReader(file);
+        BufferedReader reader = new BufferedReader(fr);
+        String line = reader.readLine();
+
+        while (line != null) {
+            File currFile = new File(line);
+            String fileName = currFile.getName().replace("%20", " ").replace(".mp3", "");
+            playlistPaths.add(line);
+            line = reader.readLine();
+            playList.getItems().addAll(fileName);
+        }
+        playTrack(playlistPaths.get(index), new File(playlistPaths.get(index)));
+        while (trackIsOn == true) {
+            if (current / end == 1 && index <= playlistPaths.size()){
+                index += 1;
+                playTrack(playlistPaths.get(index), new File(playlistPaths.get(index)));
+            }
+        }
+
+    }
+
+    private void playTrack(String fileDir, File file){
+            Media media = new Media(fileDir);
+            String fileName = file.getName();
+            myPlayer.mediaPlayer = new MediaPlayer(media);
+            myPlayer.playMedia();
+            trackIsOn = true;
+            mediaView.setMediaPlayer(myPlayer.mediaPlayer);
+            beginTimer();
+            songNameLabel.setText(fileName.replace("%20", " ").replace(".mp3", ""));
+            volumeSlider.setValue(myPlayer.mediaPlayer.getVolume() * 100);
+            volumeSlider.valueProperty().addListener(observable -> myPlayer.mediaPlayer.setVolume(volumeSlider.getValue() / 350));
+    }
 
     @FXML
-    private void handleButtonAction(ActionEvent event) {
+    private void handleButtonAction(ActionEvent event) throws IOException {
         FileChooser fileChooser = new FileChooser();
-        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Select mp3 or mp4 file", "*.mp3", "*.mp4");
+        FileChooser.ExtensionFilter filter = new FileChooser.ExtensionFilter("Select mp3 or mp4 file", "*.mp3", "*.mp4", "*.txt");
         fileChooser.getExtensionFilters().add(filter);
         File file = fileChooser.showOpenDialog(null);
 
-        String filePath = file.toURI().toString();
-        String fileName = file.getName();
 
-        playList.getItems().addAll(fileName.replace(".mp3", ""));
+        String filePath = file.toURI().toString();
+        System.out.println(filePath);
 
         if (filePath != null){
-            Media media = new Media(filePath);
-            myPlayer.mediaPlayer = new MediaPlayer(media);
-            myPlayer.playMedia();
-            mediaView.setMediaPlayer(myPlayer.mediaPlayer);
-            //DoubleProperty width = mediaView.fitWidthProperty();
-            //DoubleProperty height = mediaView.fitHeightProperty();
-            //width.bind(Bindings.selectDouble(mediaView.sceneProperty(), "width"));
-            //height.bind(Bindings.selectDouble(mediaView.sceneProperty(), "height"));
-            beginTimer();
-            songNameLabel.setText(fileName);
-            volumeSlider.setValue(myPlayer.mediaPlayer.getVolume() * 100);
-            volumeSlider.valueProperty().addListener(observable -> myPlayer.mediaPlayer.setVolume(volumeSlider.getValue() / 350));
-            //angversh
-            cycleTrack();
-            //angversh
+            playTrack(filePath, file);
         }
     }
 
@@ -161,13 +193,12 @@ public class HelloController {
             beginTimer();
             isPlaying = false;
             playButt.setImage(imagePause);
-            //angversh
+
             if (isCycled) {
                 isCycled = false;
                 cycleTrack();
                 cycleButt.setImage(imageCycle);
             }
-            //angversh
 
         } else {
             myPlayer.pauseMedia();
@@ -183,7 +214,6 @@ public class HelloController {
     }
     @FXML
     private void plusFiveSec(ActionEvent event){
-
     }
 
     private void beginTimer(){
@@ -191,9 +221,9 @@ public class HelloController {
         task = new TimerTask() {
             public void run() {
                 running = true;
-                double current = myPlayer.mediaPlayer.getCurrentTime().toSeconds();
+                current = myPlayer.mediaPlayer.getCurrentTime().toSeconds();
                 int start = (int) current;
-                double end = myPlayer.mediaPlayer.getTotalDuration().toSeconds();
+                end = myPlayer.mediaPlayer.getTotalDuration().toSeconds();
                 sceneSlider.setMax(end);
                 int finish = (int) end;
                 int minutesFinish = finish / 60;
@@ -216,6 +246,7 @@ public class HelloController {
                 songProgressBar.setProgress(current/end);
                 if (current/end == 1) {
                     cancelTimer();
+                    trackIsOn = false;
                 }
                 sceneSlider.setOnMouseClicked(new EventHandler<MouseEvent>() {
                     @Override
