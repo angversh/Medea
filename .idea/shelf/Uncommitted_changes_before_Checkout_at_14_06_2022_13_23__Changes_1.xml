@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_14_06_2022_13_23_[Changes]1" date="1655202249282" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_06_2022_13_23_[Changes]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 14.06.2022 13:23 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/medea/HelloController.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/medea/HelloController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_06_2022_13_23_[Changes]1/HelloController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/medea/HelloController$1.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/medea/HelloController$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_06_2022_13_23_[Changes]1/HelloController$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/com/example/medea/HelloController$1$1.class" />
+    <option name="AFTER_PATH" value="target/classes/com/example/medea/HelloController$1$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_06_2022_13_23_[Changes]1/HelloController$1$1.class" />
+  </binary>
+</changelist>
