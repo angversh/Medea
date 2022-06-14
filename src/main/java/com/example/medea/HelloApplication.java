@@ -18,6 +18,7 @@ public class HelloApplication extends Application {
                 stage.setFullScreen(true);
             }
         });
+
         scene.getStylesheets().add("style.css");
         stage.setScene(scene);
         stage.show();
