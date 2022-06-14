@@ -8,6 +8,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.effect.ColorAdjust?>
@@ -149,6 +150,7 @@
               </cursor>
           </Button>
           <Line endX="155.49288940429688" stroke="#373737" translateX="10.0" translateY="15.0" />
+      <ListView fx:id="playList" prefHeight="409.0" prefWidth="176.0" />
       </VBox>
     <Line endX="1004.0" layoutX="-4.0" layoutY="624.0" opacity="0.0" startX="-43.00000762939453" stroke="#adff00" translateX="3.0" translateY="1.0" AnchorPane.bottomAnchor="65.5" AnchorPane.leftAnchor="-47.50000762939453" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="623.5" />
    <VBox layoutX="25.0" prefHeight="72.0" prefWidth="1007.0" translateX="-15.0" translateY="13.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="23.0" AnchorPane.rightAnchor="-19.0">
@@ -169,7 +171,7 @@
             <Font name="Yu Gothic Regular" size="12.0" />
         </font>
     </Label>
-    <Button id="selected" alignment="CENTER" blendMode="ADD" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="558.0" layoutY="681.0" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="77.0">
+    <Button id="selected" alignment="CENTER" blendMode="ADD" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="558.0" layoutY="681.0" mnemonicParsing="false" styleClass="selected" stylesheets="@../../../style.css" translateX="-36.0" translateY="-1.0" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="77.0">
         <graphic>
             <ImageView fitHeight="13.0" fitWidth="13.0" pickOnBounds="true" preserveRatio="true">
                 <image>
@@ -208,7 +210,7 @@
             </ImageView>
         </graphic>
     </Button>
-    <Button id="bottom-buttons" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" maxHeight="10.0" maxWidth="10.0" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onMouseClicked="#cycleTrack" prefHeight="10.0" prefWidth="10.0" scaleX="1.05" styleClass="bottom-buttons" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="28.5" AnchorPane.leftAnchor="621.0" AnchorPane.rightAnchor="355.7">
+    <Button id="bottom-buttons" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" maxHeight="10.0" maxWidth="10.0" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onMouseClicked="#cycleTrack" prefHeight="10.0" prefWidth="10.0" scaleX="1.05" styleClass="bottom-buttons" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="37.5" AnchorPane.leftAnchor="621.0" AnchorPane.rightAnchor="355.7">
         <graphic>
             <ImageView accessibleRole="BUTTON" blendMode="ADD" fitHeight="12.3" fitWidth="12.3" pickOnBounds="true" preserveRatio="true" translateY="2.0">
                 <image>
@@ -221,7 +223,7 @@
         </opaqueInsets>
     </Button>
     <Text fill="#6b7280" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to Medea!" translateX="44.0" wrappingWidth="109.98304748535156" AnchorPane.bottomAnchor="81.0" />
-    <Slider fx:id="volumeSlider" blendMode="ADD" prefWidth="89.0" scaleX="0.7" scaleY="0.7" styleClass="volume-slider" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="31.5" AnchorPane.rightAnchor="1.0">
+    <Slider fx:id="volumeSlider" blendMode="ADD" prefHeight="24.0" prefWidth="89.0" scaleX="1.3" scaleY="1.3" styleClass="volume-slider" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="7.0">
         <cursor>
             <Cursor fx:constant="HAND" />
         </cursor>
@@ -249,11 +251,11 @@
             <Insets left="-28.0" />
         </padding>
     </Label>
-    <Button id="bottom-buttons" fx:id="playButton" alignment="CENTER" graphicTextGap="0.0" maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#playMedia" prefHeight="15.0" prefWidth="15.0" styleClass="bottom-buttons" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="558.0" AnchorPane.rightAnchor="398.5">
+    <Button id="bottom-buttons" fx:id="playButton" alignment="CENTER" graphicTextGap="0.0" layoutX="562.0" maxHeight="24.0" maxWidth="46.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#playMedia" prefHeight="24.0" prefWidth="46.0" styleClass="bottom-buttons" stylesheets="@../../../style.css" translateY="7.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="401.0">
         <graphic>
-            <ImageView fx:id="playButt" blendMode="ADD" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="playButt" blendMode="ADD" fitHeight="39.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                 <image>
-                    <Image url="@../../../images/icons/play.png" />
+                    <Image url="@../../../images/icons/pause.png" />
                 </image>
                 <cursor>
                     <Cursor fx:constant="HAND" />
@@ -263,17 +265,14 @@
         <cursor>
             <Cursor fx:constant="HAND" />
         </cursor>
-      <padding>
-         <Insets left="-10.0" right="-10.0" />
-      </padding>
     </Button>
-    <Button id="bottom-buttons" fx:id="playButton1" alignment="CENTER" blendMode="SRC_ATOP" graphicTextGap="0.0" layoutX="10.0" layoutY="10.0" maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#playMedia" opacity="0.0" prefHeight="15.0" prefWidth="15.0" styleClass="bottom-buttons" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="558.0" AnchorPane.rightAnchor="399.5">
+    <Button id="bottom-buttons" fx:id="playButton1" alignment="CENTER" blendMode="SRC_ATOP" graphicTextGap="0.0" layoutX="571.0" layoutY="10.0" maxHeight="38.0" maxWidth="48.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#playMedia" opacity="0.0" prefHeight="38.0" prefWidth="48.0" styleClass="bottom-buttons" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="569.0" AnchorPane.rightAnchor="390.0">
         <cursor>
             <Cursor fx:constant="HAND" />
         </cursor>
     </Button>
-    <ProgressBar fx:id="songProgressBar" layoutX="216.0" layoutY="689.0" prefWidth="500.0" progress="0.0" scaleY="0.19999999999999996" translateX="53.0" translateY="-33.0" AnchorPane.bottomAnchor="-26.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="137.0" />
-    <Slider fx:id="sceneSlider" layoutX="271.0" layoutY="658.0" max="0.0" opacity="0.0" prefHeight="4.0" prefWidth="500.0" AnchorPane.bottomAnchor="9.5" AnchorPane.leftAnchor="236.5" AnchorPane.rightAnchor="83.0">
+    <ProgressBar fx:id="songProgressBar" layoutX="216.0" layoutY="689.0" prefWidth="500.0" progress="0.0" scaleY="0.5" translateX="53.0" translateY="-33.0" AnchorPane.bottomAnchor="-26.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="137.0" />
+    <Slider fx:id="sceneSlider" layoutX="271.0" layoutY="658.0" max="0.0" opacity="0.0" prefHeight="4.0" prefWidth="500.0" scaleY="1.3" AnchorPane.bottomAnchor="9.5" AnchorPane.leftAnchor="236.5" AnchorPane.rightAnchor="83.0">
         <cursor>
             <Cursor fx:constant="HAND" />
         </cursor>

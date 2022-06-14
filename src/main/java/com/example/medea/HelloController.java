@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.shape.Path;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -81,6 +82,13 @@ public class HelloController {
     private ImageView playButt;
     @FXML
     private ProgressBar songProgressBar;
+    @FXML
+    private ListView<String> playList;
+
+
+    private ArrayList<String> playlist_names = new ArrayList<>();
+
+
 
     private Timer timer;
     private TimerTask task;
@@ -113,8 +121,14 @@ public class HelloController {
         fileChooser.getExtensionFilters().add(filter);
         File file = fileChooser.showOpenDialog(null);
 
+
         String filePath = file.toURI().toString();
         String fileName = file.getName();
+
+        playList.getItems().addAll(fileName.replace(".mp3", ""));
+
+
+
 
         if (filePath != null){
             Media media = new Media(filePath);
