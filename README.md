@@ -19,15 +19,15 @@
     section 2. Playing MP3 in Medea Player
       Assignees: 7: Vlad, Angelina, Kirill 
     section 3. Player Control with Buttons
-      Assignees: 4: Vlad, Kirill
+      Assignees: 7: Vlad, Kirill
     section 4. Volume Setting 
-      Assignees: 5: Vlad, Angelina, Kirill 
+      Assignees: 7: Vlad, Angelina, Kirill 
     section 5. Adding tracks to a Playlist
       Assignees: 7: Vlad, Angelina, Kirill
     section 6. Uploading & Unloading a Playlist
-      Assignees: 3: Vlad, Angelina, Kirill
+      Assignees: 7: Vlad, Angelina, Kirill
     section 7. Built-in Equalizer
-      Assignees: 4: Vlad, Angelina, Kirill 
+      Assignees: 7: Vlad, Angelina, Kirill 
     section 8. Built-in Equalizer
       Assignees: 7: Vlad, Angelina, Kirill, All 
  ```
