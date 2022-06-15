@@ -6,16 +6,15 @@
 <h3><li>Angelina Vershinina 💚 Leader/Developer</li></h3>
 <h3><li>Vladislav Shabalin 🎙 Developer/Tester</li></h3>
 <h3><li>Kirill Maximenko 💭 Developer/Tester</li></h3>
-
-
-<h1 align="center">Sprints:</h1>
-
  
 <h1 align="center"></h1>
 
 | `MedeaHome` |
 | :--: |
 |<p align="center"><img src="https://github.com/angversh/Medea/blob/main/Images/MedeaHome.png?raw=true" width="1147.21" height="616"/> |  
+
+
+<h1 align="center">Sprints:</h1>
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'fillType0': '#7FFF21', 'fillType1': '#020202', 'fillType2': '#ADFF00', 'fillType3': '#020202', 'fillType4': '#ADFF00', 'fillType5': '#020202', 'fillType6': '#ADFF00', 'fillType7': '#020202', 'fillType8': '#020202','textColor':'#7A7A7A', 'fontSize':'14px'}}}%%
