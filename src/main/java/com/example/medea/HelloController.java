@@ -54,6 +54,7 @@ public class HelloController {
 
     Player myPlayer = new Player();
 
+
     @FXML
     public TextField newPlaylistName;
     @FXML
@@ -92,6 +93,10 @@ public class HelloController {
     private ProgressBar songProgressBar;
     @FXML
     private ListView<String> playList;
+    @FXML
+    private Button nextButton;
+    @FXML
+    private Button prevButton;
 
     private ArrayList<String> playlistPaths = new ArrayList<String>();
 
@@ -125,7 +130,7 @@ public class HelloController {
     Image imageCycleOn = new Image(urlCycleOn);
 
     boolean backgroundLoading = true;
-    int index = 0;
+    private int songNumber;
 
 
     public HelloController() {
@@ -147,15 +152,46 @@ public class HelloController {
             line = reader.readLine();
             playList.getItems().addAll(fileName);
         }
-        playTrack(playlistPaths.get(index), new File(playlistPaths.get(index)));
-        while (trackIsOn == true) {
-            if (current / end == 1 && index <= playlistPaths.size()){
-                index += 1;
-                playTrack(playlistPaths.get(index), new File(playlistPaths.get(index)));
-            }
-        }
-
+        playTrack(playlistPaths.get(songNumber), new File(playlistPaths.get(songNumber)));
     }
+
+    @FXML
+    public void nextMedia(ActionEvent actionEvent) {
+        if (songNumber < playlistPaths.size() - 1) {
+
+            songNumber = songNumber + 1;
+
+            myPlayer.stopMedia();
+
+            if (running) {
+                cancelTimer();
+            }
+            playTrack(playlistPaths.get(songNumber), new File(playlistPaths.get(songNumber)));
+        } else {
+            songNumber = 0;
+            myPlayer.stopMedia();
+            playTrack(playlistPaths.get(songNumber), new File(playlistPaths.get(songNumber)));
+        }
+    }
+    @FXML
+    public void prevMedia(ActionEvent actionEvent) {
+        if (songNumber > 0) {
+
+            songNumber = songNumber - 1;
+
+            myPlayer.stopMedia();
+
+            if (running) {
+                cancelTimer();
+            }
+            playTrack(playlistPaths.get(songNumber), new File(playlistPaths.get(songNumber)));
+        } else {
+            songNumber = playlistPaths.size() - 1;
+            myPlayer.stopMedia();
+            playTrack(playlistPaths.get(songNumber), new File(playlistPaths.get(songNumber)));
+        }
+    }
+
 
     private void playTrack(String fileDir, File file){
             Media media = new Media(fileDir);

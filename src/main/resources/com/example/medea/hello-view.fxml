@@ -183,7 +183,7 @@
             </ImageView>
         </graphic>
     </Button>
-    <Button id="bottom" alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="bottom" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="27.5" AnchorPane.leftAnchor="585.9" AnchorPane.rightAnchor="377.0">
+    <Button id="bottom" fx:id="nextButton" alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#nextMedia" styleClass="bottom" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="27.5" AnchorPane.leftAnchor="585.9" AnchorPane.rightAnchor="377.0">
         <graphic>
             <ImageView id="bottom" fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true" styleClass="bottom">
                 <image>
@@ -191,6 +191,9 @@
                 </image>
             </ImageView>
         </graphic>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
     </Button>
     <Button id="bottom" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" mnemonicParsing="false" styleClass="bottom" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="504.0" AnchorPane.rightAnchor="468.9">
         <graphic>
@@ -204,7 +207,7 @@
             </ImageView>
         </graphic>
     </Button>
-    <Button id="bottom" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="bottom" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="27.5" AnchorPane.leftAnchor="524.0" AnchorPane.rightAnchor="445.9">
+    <Button id="bottom" fx:id="prevButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#prevMedia" styleClass="bottom" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="27.5" AnchorPane.leftAnchor="524.0" AnchorPane.rightAnchor="445.9">
         <graphic>
             <ImageView id="bottom" fitHeight="17.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true" styleClass="bottom">
                 <image>
@@ -212,6 +215,9 @@
                 </image>
             </ImageView>
         </graphic>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
     </Button>
     <Button id="bottom" fx:id="cycleButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" maxHeight="10.0" maxWidth="10.0" minHeight="10.0" minWidth="10.0" mnemonicParsing="false" onAction="#cycleTrack" onMouseClicked="#cycleTrack" prefHeight="10.0" prefWidth="10.0" scaleX="1.05" styleClass="bottom" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="37.5" AnchorPane.leftAnchor="616.0" AnchorPane.rightAnchor="364.7">
         <graphic>
@@ -254,7 +260,7 @@
             <Insets left="-28.0" />
         </padding>
     </Label>
-    <Button id="bottom" fx:id="playButton" alignment="CENTER" graphicTextGap="0.0" maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#playMedia" prefHeight="15.0" prefWidth="15.0" styleClass="bottom" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="551.0" AnchorPane.rightAnchor="408.5">
+    <Button id="bottom" fx:id="playButton" alignment="CENTER" graphicTextGap="0.0" layoutX="555.0" maxHeight="15.0" maxWidth="40.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#playMedia" prefHeight="15.0" prefWidth="40.0" styleClass="bottom" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="553.0" AnchorPane.rightAnchor="412.0">
         <graphic>
             <ImageView id="bottom" fx:id="playButt" blendMode="ADD" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" styleClass="bottom">
                 <image>
@@ -265,11 +271,6 @@
                 </cursor>
             </ImageView>
         </graphic>
-        <cursor>
-            <Cursor fx:constant="HAND" />
-        </cursor>
-    </Button>
-    <Button id="bottom" fx:id="playButton1" alignment="CENTER" blendMode="SRC_ATOP" graphicTextGap="0.0" layoutX="10.0" layoutY="10.0" maxHeight="0.0" maxWidth="0.0" minHeight="15.0" minWidth="15.0" mnemonicParsing="false" onAction="#playMedia" opacity="0.0" prefHeight="15.0" prefWidth="15.0" styleClass="bottom" stylesheets="@../../../style.css" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="558.0" AnchorPane.rightAnchor="399.5">
         <cursor>
             <Cursor fx:constant="HAND" />
         </cursor>
