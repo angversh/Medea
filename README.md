@@ -11,7 +11,7 @@
 
 | `MedeaHome` |
 | :--: |
-|<p align="center"><img src="https://github.com/angversh/Medea/blob/main/Images/MedeaHome.png?raw=true" width="1147.21" height="600"/> |  
+|<p align="center"><img src="https://github.com/angversh/Medea/blob/main/Images/MedeaHome.png?raw=true" width="1147.21" height="500"/> |  
 
 
 <h1 align="center">Sprints:</h1>
