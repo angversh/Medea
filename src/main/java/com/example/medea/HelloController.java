@@ -117,8 +117,9 @@ public class HelloController {
     //angversh
     private File[] files;
     private boolean isPlaying;
-    private int count = 0;
+
     private String currentPlaylist;
+    private ArrayList<String> playListsNames = new ArrayList<String>();
     String urlPause = "file:src/main/resources/images/icons/pause.png";
     Image imagePause = new Image(urlPause);
     String urlPlay = "file:src/main/resources/images/icons/play.png";
@@ -149,18 +150,21 @@ public class HelloController {
             File currFile = new File(line);
             String fileName = currFile.getName().replace("%20", " ").replace(".mp3", "");
             playlistPaths.add(line);
+            playListsNames.add(fileName);
             line = reader.readLine();
             playList.getItems().addAll(fileName);
         }
         playTrack(playlistPaths.get(songNumber), new File(playlistPaths.get(songNumber)));
-        String currentTrack;
 
-        playList.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+        playList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 myPlayer.stopMedia();
-                //currentTrack = playList.getSelectionModel().getSelectedItem().toString();
-                playTrack(playlistPaths.get(songNumber), new File(playlistPaths.get(songNumber)));
+                String currentTrack = playList.getSelectionModel().getSelectedItem();
+                System.out.println(currentTrack);
+                int index = playListsNames.indexOf(currentTrack);
+                System.out.println(index);
+                playTrack(playlistPaths.get(index), new File(playListsNames.get(index)));
             }
         });
     }
