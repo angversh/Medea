@@ -153,6 +153,16 @@ public class HelloController {
             playList.getItems().addAll(fileName);
         }
         playTrack(playlistPaths.get(songNumber), new File(playlistPaths.get(songNumber)));
+        String currentTrack;
+
+        playList.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
+                myPlayer.stopMedia();
+                //currentTrack = playList.getSelectionModel().getSelectedItem().toString();
+                playTrack(playlistPaths.get(songNumber), new File(playlistPaths.get(songNumber)));
+            }
+        });
     }
 
     @FXML
