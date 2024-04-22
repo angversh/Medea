@@ -3,7 +3,7 @@
 <p align="center"><img src="https://github.com/angversh/Medea/blob/main/Images/MedeaGif.gif?raw=true" width="495" height="260"/></p>
 <h1 align="center">Created by:</h1> 
    
-<h3><li>Angelina Vershinina 💚 Leader/Developer</li></h3>
+<h3><li>Angelina Vershinina Lead/Developer</li></h3>
 <h3><li>Vladislav Shabalin 🎙 Developer/Tester</li></h3>
 <h3><li>Kirill Maximenko 💭 Developer/Tester</li></h3>
  
